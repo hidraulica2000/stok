@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  database: hsc_development
+
+test:
+  adapter: postgresql
+  database: hsc_test
+
+production:
+  adapter: postgresql
+  database: hsc_production
