@@ -11,7 +11,61 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130227041921) do
+ActiveRecord::Schema.define(:version => 20130227205503) do
+
+  create_table "brands", :force => true do |t|
+    t.string   "name",       :default => "", :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "calibrations", :force => true do |t|
+    t.integer  "tool_id"
+    t.string   "purchase_request"
+    t.string   "order_number"
+    t.date     "order_date"
+    t.date     "estimated_delivery_date"
+    t.string   "cost"
+    t.date     "sent_at"
+    t.date     "calibration_date"
+    t.date     "received_at"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  create_table "instruments", :force => true do |t|
+    t.string   "name",       :default => "", :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "suppliers", :force => true do |t|
+    t.string   "name",       :default => "", :null => false
+    t.string   "detail"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "tools", :force => true do |t|
+    t.integer  "instrument_id"
+    t.string   "code"
+    t.string   "code_short"
+    t.integer  "brand_id"
+    t.string   "reference"
+    t.string   "serial_number"
+    t.string   "unit"
+    t.string   "range"
+    t.string   "scale"
+    t.string   "preciseness"
+    t.integer  "calibration_frequency"
+    t.date     "estimated_calibration_date"
+    t.string   "order_number"
+    t.integer  "supplier_id"
+    t.date     "order_date"
+    t.string   "order_cost"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name",             :default => "", :null => false

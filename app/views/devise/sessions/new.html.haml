@@ -1,17 +1,21 @@
-.container
-  %h2 Inicio de Sesión
-  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-    %div
-      %strong Correo Electronico
-      %br
-      = f.email_field :email, :autofocus => true
-    %div
-      %strong Contraseña
-      %br
-      = f.password_field :password
-    - if devise_mapping.rememberable?
-      %div
-        = f.check_box :remember_me
-        %small Recordar datos
-    %div.form-actions= f.submit "Iniciar Sesión", :class => "btn btn-warning"
-    = render "devise/shared/links"
+%div{:style => "background-image: url('../assets/textures/bg-texture-orange.png'); color: white;"}
+  .container
+    %div.form
+      %h2 Inicio de Sesión
+      = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+        %div
+          %strong Correo Electronico
+          %br
+          = f.email_field :email, :autofocus => true
+        %div
+          %strong Contraseña
+          %br
+          = f.password_field :password
+        - if devise_mapping.rememberable?
+          %div
+            = f.check_box :remember_me
+            %small Recordar datos
+        %div.well
+          = f.submit "Iniciar Sesión", :class => "btn btn-warning"
+          %hr
+          = render "devise/shared/links"

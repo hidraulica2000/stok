@@ -1,6 +1,13 @@
 Hsc::Application.routes.draw do
-  
-  devise_for :users, :path => "usuarios"
+
+  devise_for :users, :skip => [:sessions] do
+    get '/login'   => "devise/sessions#new", :as => :new_user_session
+    post '/login'  => 'devise/sessions#create',    :as => :user_session
+    get '/logout'  => 'devise/sessions#destroy',   :as => :destroy_user_session
+    get "/registrar"   => "devise/registrations#new",   :as => :new_user_registration
+  end
+
+  resources :tools
   #root :to => "devise/sessions#new"
   # The priority is based upon order of creation:
   # first created -> highest priority.

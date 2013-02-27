@@ -3,27 +3,26 @@
   %head
     %title Hsc
     = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
+    = javascript_include_tag "application", :media => "all"
     = csrf_meta_tags
   %body
     %div.navbar.navbar-fixed-top.navbar-inverse
       %div.navbar-inner
         %div.container
-          .brand Hidraulic Systems         
-                 
+          .brand Hidraulic Systems
+
           %ul.nav.pull-right
             - if user_signed_in?
-                   
+
             - else
               %li= link_to "Ingresar", new_user_session_path
-              %li= link_to "Registrarme", new_user_registration_path
-              
+
     - if flash[:notice]
-      .alert.alert-success
+      .alert.alert-success{:style => "margin-bottom: 0px;"}
         %button.close{"data-dismiss" => "alert", :type => "button"} x
         = flash[:notice]
     - if flash[:alert]
-      .alert.alert-error
+      .alert.alert-error{:style => "margin-bottom: 0px;"}
         %button.close{"data-dismiss" => "alert", :type => "button"} ×
         = flash[:alert]
     = yield

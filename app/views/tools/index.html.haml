@@ -1,0 +1,14 @@
+.container
+  %h3 Panel Principal
+  .tabbable.tabs-left
+    / Only required for left/right tabs
+    %ul.nav.nav-tabs
+      %li.active
+        %a{"data-toggle" => "tab", :href => "#tab1"} Instrumentos
+      %li
+        %a{"data-toggle" => "tab", :href => "#tab2"} Calibraciones
+    .tab-content
+      #tab1.tab-pane.active
+        %p I'm in Section 1.
+      #tab2.tab-pane
+        %p Howdy, I'm in Section 2.
