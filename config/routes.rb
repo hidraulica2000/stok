@@ -1,4 +1,7 @@
 Hsc::Application.routes.draw do
+  
+  devise_for :users, :path => "usuarios"
+  #root :to => "devise/sessions#new"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

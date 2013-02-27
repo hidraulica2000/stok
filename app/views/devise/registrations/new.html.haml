@@ -1,0 +1,20 @@
+%div{:style => "background-image: url('../assets/textures/bg-texture-orange.png'); color: white"}
+  .container
+    %h2 Registro
+    = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      %div
+        %strong Correo Electronico
+        %br
+        = f.email_field :email, :autofocus => true
+      %div
+        %strong Contraseña
+        %br
+        = f.password_field :password
+      %div
+        %strong Confirme Contraseña
+        %br
+        = f.password_field :password_confirmation
+      %div= f.submit "Registrar Usuario", :class => "btn btn-success"
+.container      
+  = render "devise/shared/links"

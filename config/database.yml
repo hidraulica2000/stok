@@ -1,11 +1,11 @@
 development:
   adapter: postgresql
-  database: hsc_development
+  database: stok_development
 
 test:
   adapter: postgresql
-  database: hsc_test
+  database: stok_test
 
 production:
   adapter: postgresql
-  database: hsc_production
+  database: stok_production
